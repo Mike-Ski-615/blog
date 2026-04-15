@@ -1,48 +1,56 @@
+import type { ReactNode } from "react";
 import {
   isRouteErrorResponse,
   Links,
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration,
 } from "react-router";
-
 import type { Route } from "./+types/root";
+import { AppProviders } from "@/provider/app-providers";
 import "./app.css";
 
+// app/root.tsx
 export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  {
+    rel: "icon",
+    href: "/icons/favicon.ico",
+  },
   {
     rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
+    href: "https://rsms.me/",
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    href: "https://rsms.me/inter/inter.css",
   },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="no-scrollbar">
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Home page" />
+        <title>Home</title>
         <Meta />
         <Links />
       </head>
       <body>
         {children}
-        <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
 }
 
-export default function App() {
-  return <Outlet />;
+export default function Root() {
+  return (
+    <AppProviders>
+      <Outlet />
+    </AppProviders>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
@@ -65,11 +73,11 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     <main className="pt-16 p-4 container mx-auto">
       <h1>{message}</h1>
       <p>{details}</p>
-      {stack && (
+      {stack ? (
         <pre className="w-full p-4 overflow-x-auto">
           <code>{stack}</code>
         </pre>
-      )}
+      ) : null}
     </main>
   );
 }
