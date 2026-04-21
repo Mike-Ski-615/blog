@@ -8,7 +8,7 @@ export default function VisitorCount() {
   }
 
   return (
-    <Badge variant="secondary" className="type-meta">
+    <Badge variant="secondary">
       <IconEye />
       {siteConfig.visitorCount}
     </Badge>

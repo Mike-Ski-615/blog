@@ -10,29 +10,33 @@ export default function UserCard() {
   } = useSiteContent();
 
   return (
-    <div className="grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 p-4 sm:gap-6 sm:p-5">
-      <div className="flex min-w-0 items-center gap-4 sm:items-end sm:gap-5">
-        <div className="size-16 shrink-0 overflow-hidden rounded-[1.35rem] border border-border/70 bg-muted/30 p-1 shadow-[0_20px_45px_-32px_rgba(15,23,42,0.28)] sm:size-24 sm:rounded-[1.9rem]">
+    <div className="flex w-full items-center justify-between p-2 md:px-6 md:py-3">
+      {/* Left */}
+      <div className="flex min-w-0 items-center gap-4 sm:gap-4">
+        {/* Avatar */}
+        <div className="size-16 shrink-0 overflow-hidden rounded-2xl sm:size-20">
           <img
             src={siteConfig.avatarSrc}
             alt={profile.avatarAlt}
-            className="block size-full rounded-[1rem] object-cover sm:rounded-[1.5rem]"
+            className="h-full w-full object-cover"
           />
         </div>
 
-        <div className="flex min-w-0 flex-col justify-center overflow-hidden sm:justify-end">
-          <h1 className="type-display truncate text-xl font-bold leading-none sm:text-[2.15rem]">
+        {/* Info */}
+        <div className="flex min-w-0 flex-col justify-center gap-2 h-full">
+          <h1 className="truncate text-lg font-semibold leading-tight sm:text-2xl">
             {profile.name}
           </h1>
-          <div className="mt-1.5 max-w-full overflow-hidden [&>div]:max-w-full">
+
+          <div className="text-sm text-muted-foreground sm:text-base">
             <RoleCycle roles={profile.roles} />
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col items-end justify-between self-stretch">
+      {/* Right */}
+      <div className="flex flex-col shrink-0 items-end justify-between gap-3 sm:gap-4">
         <ModeToggle />
-
         <VisitorCount />
       </div>
     </div>

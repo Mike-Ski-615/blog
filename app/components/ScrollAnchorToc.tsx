@@ -120,7 +120,12 @@ export function ScrollAnchorToc() {
       childList: true,
       characterData: true,
       attributes: true,
-      attributeFilter: ["data-toc-section", "data-toc-depth", "data-toc-label", "id"],
+      attributeFilter: [
+        "data-toc-section",
+        "data-toc-depth",
+        "data-toc-label",
+        "id",
+      ],
     });
 
     return () => {
@@ -314,7 +319,7 @@ function DesktopScrollAnchorToc({
     >
       <div className="flex flex-col gap-2">
         <div className="flex h-7 items-center gap-3 text-sm text-muted-foreground">
-          <span className="type-display text-sm font-semibold text-foreground/90">
+          <span className=" text-sm font-semibold text-foreground/90">
             {title}
           </span>
         </div>
@@ -468,7 +473,7 @@ function MobileTocSummary({ activeCount, activeItem }: MobileTocSummaryProps) {
       <span className="min-w-0 flex-1 truncate text-left font-medium text-primary">
         {activeItem.label}
       </span>
-      <span className="type-meta shrink-0 tabular-nums text-muted-foreground">
+      <span className=" shrink-0 tabular-nums text-muted-foreground">
         {activeCount}
       </span>
     </>
@@ -590,7 +595,7 @@ function ExpandedMobileToc({
         </div>
       </div>
 
-      <span className="type-meta w-8 shrink-0 text-right text-xs tabular-nums text-muted-foreground">
+      <span className=" w-8 shrink-0 text-right text-xs tabular-nums text-muted-foreground">
         {activeCount}
       </span>
     </div>

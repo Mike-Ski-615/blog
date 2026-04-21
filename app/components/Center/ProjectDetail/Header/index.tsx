@@ -13,7 +13,7 @@ export default function Header({ slug }: HeaderProps) {
 
   return (
     <div className="flex items-center justify-between px-4 py-2">
-      <div className="type-display flex items-center gap-2 text-lg font-semibold leading-tight text-title">
+      <div className=" flex items-center gap-2 text-lg font-semibold leading-tight text-title">
         <Button variant="ghost" size="icon-sm" asChild>
           <Link
             to="/"

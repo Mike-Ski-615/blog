@@ -4,13 +4,13 @@ import type { ProjectMap, SiteContent, SiteLanguage } from "../types";
 
 export type ProjectSlug = Extract<keyof typeof enContent.projects, string>;
 export type ProjectRecord = ProjectMap<ProjectSlug>;
-export type LocalizedSiteContent = Omit<SiteContent, "projects"> & {
+type LocalizedSiteContent = Omit<SiteContent, "projects"> & {
   projects: ProjectRecord;
 };
 
 export const projectSlugs = Object.keys(enContent.projects) as ProjectSlug[];
 
-export const contentByLanguage: Record<SiteLanguage, LocalizedSiteContent> = {
+const contentByLanguage: Record<SiteLanguage, LocalizedSiteContent> = {
   "en-US": enContent,
   "zh-CN": zhContent,
 };

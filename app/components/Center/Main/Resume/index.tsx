@@ -29,20 +29,20 @@ export default function Resume() {
     <>
       <SectionHeader>{resume.title}</SectionHeader>
 
-      <div className="p-5 sm:p-6">
-        <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+      <div className="p-4 sm:p-6">
+        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div className="min-w-0 flex flex-col gap-2">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary" className="type-meta">
+              <Badge variant="secondary" className="">
                 {resume.badges.available}
               </Badge>
-              <Badge variant="outline" className="type-meta">
+              <Badge variant="outline" className="">
                 {resume.badges.updated}
               </Badge>
             </div>
 
             <div className="flex flex-col gap-1">
-              <h3 className="type-display text-[1.02rem] font-semibold leading-tight">
+              <h3 className="text-lg font-semibold leading-tight">
                 {resume.heading}
               </h3>
               <p className="max-w-2xl text-sm leading-7 text-muted-foreground">
@@ -52,7 +52,7 @@ export default function Resume() {
           </div>
 
           <div className="flex shrink-0 flex-wrap gap-2">
-            <Button size="sm" className="type-meta" asChild>
+            <Button size="sm" className="" asChild>
               <a
                 href={siteConfig.resume.href}
                 download={siteConfig.resume.downloadName}
@@ -66,7 +66,7 @@ export default function Resume() {
               <Button
                 variant="outline"
                 size="sm"
-                className="type-meta w-26"
+                className=" w-26"
                 onClick={handleCopyEmail}
               >
                 {isEmailCopied ? (

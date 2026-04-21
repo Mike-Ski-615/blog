@@ -25,14 +25,14 @@ function SocialHoverCardItem({ social }: { social: SocialLinkConfig }) {
         className="w-72 bg-popover p-3 ring-1 ring-border/60"
       >
         <div className="flex items-start gap-3">
-          <div className="type-display flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground shadow-sm">
+          <div className=" flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground shadow-sm">
             {initials}
           </div>
           <div className="flex min-w-0 flex-col gap-1">
-            <p className="type-display truncate font-semibold leading-none">
+            <p className=" truncate font-semibold leading-none">
               {social.profile.name}
             </p>
-            <p className="type-meta truncate text-xs text-muted-foreground">
+            <p className=" truncate text-xs text-muted-foreground">
               {social.profile.subtitle}
             </p>
             {social.profile.description ? (

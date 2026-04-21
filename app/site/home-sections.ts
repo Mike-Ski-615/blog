@@ -1,6 +1,6 @@
 import type { HomeSectionDepth, HomeSectionMeta } from "@/types";
 
-export type { HomeSectionDepth, HomeSectionId } from "@/types";
+export type { HomeSectionId } from "@/types";
 
 const HOME_SECTION_SELECTOR = "section[data-toc-section='true'][id]";
 const SECTION_TITLE_SELECTOR = "[data-section-title='true']";

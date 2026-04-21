@@ -20,30 +20,24 @@ export default function Introduce() {
   );
 
   return (
-    <div className="flex max-w-3xl flex-col items-start gap-4 p-5 sm:p-6">
-      <p className="max-w-3xl text-sm leading-7 text-foreground/90">
-        {about.greeting}
-      </p>
+    <div className="flex flex-col items-start gap-2 p-4">
+      <p className="text-sm leading-7 text-foreground/90">{about.greeting}</p>
 
       <p className="text-sm leading-7 text-foreground/90">
         <HoverCard openDelay={10} closeDelay={100}>
           <HoverCardTrigger asChild>
-            <Button
-              variant="link"
-              className="type-display h-5 p-0 text-[0.98rem] font-semibold tracking-[-0.02em]"
-            >
+            <Button variant="link" className="h-5 p-0 m-0 text-sm">
               {about.school.name}
             </Button>
           </HoverCardTrigger>
-          <HoverCardContent className="flex w-64 flex-col gap-1 rounded-2xl border border-border/70 bg-popover/95 p-4 shadow-[0_24px_60px_-36px_rgba(15,23,42,0.4)] backdrop-blur-sm">
-            <div className="type-display font-semibold">{about.school.name}</div>
+          <HoverCardContent className="flex w-64 flex-col gap-1 rounded-2xl border border-border/70 bg-popover/95 p-4 backdrop-blur-sm">
+            <div className=" font-semibold">{about.school.name}</div>
             <div className="text-sm">{about.school.major}</div>
-            <div className="type-meta text-[0.7rem] text-muted-foreground">
+            <div className=" text-xs text-muted-foreground">
               {about.school.majorEnglish}
             </div>
           </HoverCardContent>
         </HoverCard>
-        {" "}
         {about.status}
       </p>
       {hasContactActions ? (

@@ -12,7 +12,7 @@ export default function SendEmail() {
   }
 
   return (
-    <Button size="sm" variant="outline" className="type-meta" asChild>
+    <Button size="sm" variant="outline" className="" asChild>
       <a href={`mailto:${email}`}>
         <IconMail data-icon="inline-start" />
         {ui.actions.sendEmail}

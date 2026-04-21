@@ -45,12 +45,12 @@ export function OverviewTab({ project }: OverviewTabProps) {
     <TabsContent value="overview">
       <div className="flex w-full flex-col gap-4 p-4">
         <div className="flex items-start justify-between gap-3">
-          <h1 className="type-display min-w-0 flex-1 text-2xl font-bold leading-tight text-title">
+          <h1 className=" min-w-0 flex-1 text-2xl font-bold leading-tight text-title">
             {project.name}
           </h1>
           <Badge
             variant="outline"
-            className="type-meta shrink-0 bg-muted text-foreground"
+            className=" shrink-0 bg-muted text-foreground"
           >
             <span className="relative size-1.5 rounded-full bg-current before:absolute before:inset-0 before:animate-ping before:rounded-full before:bg-current" />
             <span>{statusLabel}</span>
@@ -81,9 +81,7 @@ export function OverviewTab({ project }: OverviewTabProps) {
         )}
 
         <div className="flex flex-col gap-2">
-          <h2 className="type-display font-semibold text-title">
-            {stackTitle}
-          </h2>
+          <h2 className=" font-semibold text-title">{stackTitle}</h2>
           <div className="flex flex-wrap items-center gap-1.5">
             {project.stack.map((item) => (
               <Badge key={item} variant="secondary">

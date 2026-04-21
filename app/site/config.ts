@@ -23,4 +23,5 @@ export const siteConfig: SiteConfig = {
       },
     ],
   },
+  visitorCount: 100,
 } satisfies SiteConfig;

@@ -13,24 +13,24 @@ function ExperienceItem({ experience }: { experience: ExperienceEntry }) {
   return (
     <AccordionItem
       value={experience.id}
-      className="group mx-1 px-4 py-1 transition-colors hover:bg-muted/30 not-last:border-b-0 sm:px-5"
+      className="group px-4 transition-colors hover:bg-muted/30 not-last:border-b-0"
     >
       <AccordionTrigger className="py-4 hover:no-underline">
         <div className="flex w-full flex-col items-start justify-between pr-2 sm:flex-row">
-          <div className="flex min-w-0 items-start gap-5">
-            <div className="flex size-15 shrink-0 items-center justify-center rounded-2xl border border-border/70 bg-muted/25 shadow-[0_20px_45px_-34px_rgba(15,23,42,0.28)]">
-              <div className="type-display flex size-11 items-center justify-center rounded-xl bg-primary text-sm font-bold text-primary-foreground">
+          <div className="flex min-w-0 items-start gap-4">
+            <div className="flex size-15 shrink-0 items-center justify-center rounded-2xl border border-border/70 bg-muted/25">
+              <div className=" flex size-11 items-center justify-center rounded-xl bg-primary text-sm font-bold text-primary-foreground">
                 {experience.logoText}
               </div>
             </div>
 
             <div className="min-w-0 text-left">
               <div className="flex flex-wrap items-center gap-2">
-                <h3 className="type-display text-lg font-semibold leading-none">
+                <h3 className=" text-lg font-semibold leading-none">
                   {experience.organization}
                 </h3>
                 {experience.employmentType ? (
-                  <Badge variant="outline" className="type-meta">
+                  <Badge variant="outline" className="">
                     {experience.employmentType}
                   </Badge>
                 ) : null}
@@ -41,7 +41,7 @@ function ExperienceItem({ experience }: { experience: ExperienceEntry }) {
             </div>
           </div>
 
-          <div className="type-meta mt-2 text-sm text-muted-foreground md:mt-0 md:pl-4 md:text-right">
+          <div className=" mt-2 text-sm text-muted-foreground md:mt-0 md:pl-4 md:text-right">
             <p className="text-base font-semibold">{experience.period}</p>
             <p className="text-base text-muted-foreground">
               {experience.location}
@@ -51,7 +51,7 @@ function ExperienceItem({ experience }: { experience: ExperienceEntry }) {
       </AccordionTrigger>
 
       <AccordionContent>
-        <ul className="mt-1 flex flex-col gap-2.5 pb-2 pl-3 text-sm leading-7 text-muted-foreground md:pl-5">
+        <ul className="flex flex-col gap-2.5 pb-2 pl-3 text-sm leading-7 text-muted-foreground md:pl-5">
           {experience.highlights.map((highlight) => (
             <li key={highlight}>{highlight}</li>
           ))}

@@ -27,7 +27,7 @@ export function RoleCycle({ roles }: RoleCycleProps) {
   if (!roles || roles.length === 0) return null;
 
   return (
-    <div className="type-meta relative flex h-5 w-42 flex-col justify-center overflow-hidden text-[0.78rem] text-muted-foreground/90">
+    <div className=" relative flex h-5 w-42 flex-col justify-center overflow-hidden text-[0.78rem] text-muted-foreground/90">
       <div
         className={cn(
           "absolute w-full whitespace-nowrap duration-500 fill-mode-forwards",

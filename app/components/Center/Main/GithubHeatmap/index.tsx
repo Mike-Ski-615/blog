@@ -122,7 +122,6 @@ export default function Calendar() {
       <SectionHeader>{github.title}</SectionHeader>
       <div className="px-2 py-2 sm:px-4">
         <ActivityCalendar
-          className="!w-full"
           data={data}
           blockMargin={2}
           blockSize={10}

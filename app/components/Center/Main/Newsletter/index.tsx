@@ -47,7 +47,7 @@ export default function Newsletter() {
     <>
       <SectionHeader>{newsletter.title}</SectionHeader>
 
-      <div className="bg-striped p-5  sm:p-8">
+      <div className="bg-striped p-4  sm:p-8">
         <form
           noValidate
           aria-label={newsletter.formLabel}
@@ -82,13 +82,13 @@ export default function Newsletter() {
             {error ? <FieldError>{error}</FieldError> : null}
           </Field>
 
-          <Button type="submit" className="type-meta h-10.5 w-full rounded-xl">
+          <Button type="submit" className=" h-10.5 w-full rounded-xl">
             {newsletter.submitLabel}
           </Button>
         </form>
 
         {isSubmitted && (
-          <p className="type-meta mt-4 text-[0.8rem] text-muted-foreground">
+          <p className=" mt-4 text-[0.8rem] text-muted-foreground">
             {newsletter.successMessage}
           </p>
         )}

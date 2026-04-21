@@ -19,40 +19,36 @@ export default function Now() {
     <>
       <SectionHeader>{now.title}</SectionHeader>
 
-      <div className="px-1">
-        {now.items.map((item, index) => {
-          const Icon = nowIconMap[item.icon];
+      {now.items.map((item, index) => {
+        const Icon = nowIconMap[item.icon];
 
-          return (
-            <div key={item.id}>
-              <article className="flex gap-4 p-5 transition-colors hover:bg-muted/30 sm:p-6">
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-xl border border-border/70 bg-muted/20 shadow-[0_20px_45px_-34px_rgba(15,23,42,0.24)]">
-                  <Icon aria-hidden="true" />
+        return (
+          <div key={item.id}>
+            <article className="flex gap-4 p-4 transition-colors hover:bg-muted/30">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-xl border border-border/70 bg-muted/20">
+                <Icon aria-hidden="true" />
+              </div>
+
+              <div className="min-w-0 flex flex-col gap-2.5">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className=" text-lg font-semibold leading-tight">
+                    {item.title}
+                  </h3>
+                  <Badge variant="secondary" className="">
+                    {item.badge}
+                  </Badge>
                 </div>
 
-                <div className="min-w-0 flex flex-col gap-2.5">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <h3 className="type-display text-[1.02rem] font-semibold leading-tight">
-                      {item.title}
-                    </h3>
-                    <Badge variant="secondary" className="type-meta">
-                      {item.badge}
-                    </Badge>
-                  </div>
+                <p className="text-sm leading-7 text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            </article>
 
-                  <p className="text-sm leading-7 text-muted-foreground">
-                    {item.description}
-                  </p>
-                </div>
-              </article>
-
-              {index < now.items.length - 1 && (
-                <div className="double-divider" />
-              )}
-            </div>
-          );
-        })}
-      </div>
+            {index < now.items.length - 1 && <div className="double-divider" />}
+          </div>
+        );
+      })}
     </>
   );
 }

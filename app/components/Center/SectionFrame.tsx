@@ -37,7 +37,9 @@ export default function SectionFrame({
           innerClassName,
         )}
       >
-        {children}
+        <div className="mx-[var(--divider-inline-size)] w-[calc(100%-var(--divider-inline-size)*2)] box-border">
+          {children}
+        </div>
       </div>
 
       {divider && <div className="double-divider" />}
